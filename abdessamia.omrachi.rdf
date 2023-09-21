@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/">
+
+    <foaf:Person rdf:about="#me">
+        <foaf:firstName>Abdessamia</foaf:firstName>
+        <foaf:lastName>OMRACHI</foaf:lastName>
+        <foaf:homepage rdf:resource="http://abdessamia.omrachi.com" />
+        <foaf:schoolHomepage rdf:resource="http://www.univ-larochelle.fr/" />
+        <foaf:workplaceHomepage rdf:resource="https://www.capgemini.com/" />
+        <foaf:interest rdf:resource="https://aws.amazon.com/fr" />
+        <foaf:topic_interest rdf:resource="https://aws.amazon.com/fr/" />
+    </foaf:Person>
+
+</rdf:RDF>

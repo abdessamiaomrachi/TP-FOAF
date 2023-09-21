@@ -1,46 +1,21 @@
-<!DOCTYPE html>
-<html xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Abdessamia OMRACHIii</title>
-</head>
-<body>
-<h2>HomePage</h2>
-<div typeof="foaf:Person" about="https://abdessamiaomrachi.github.io/TP-FOAF/abdessamia.omrachi.rdf">
-    <h1>Abdessamia OMRACHI</h1>
-    <p>Prénom: <span property="foaf:firstName"></span></p>
-    <p>Nom: <span property="foaf:lastName"></span></p>
-    <p>Page personnelle: <a property="foaf:homepage" href="http://abdessamia.omrachi.com"></a></p>
-    <p>Page de l'école: <a property="foaf:schoolHomepage" href="http://www.univ-larochelle.fr/"></a></p>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/rdflib/0.5.0/rdflib.min.js"></script>
-<script>
-    // Créez un graphe RDF vide
-    const store = $rdf.graph();
-
-    // Définissez la base RDF
-    const base = "https://abdessamiaomrachi.github.io/TP-FOAF/abdessamia.omrachi.rdf";
-
-    // Analysez le fichier RDF en utilisant RDFLib.js
-    $rdf.parse(`
-        @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-
-        <${base}> foaf:firstName "Prénom de l'utilisateur" ;
-                   foaf:lastName "Nom de l'utilisateur" ;
-                   foaf:homepage <http://example.com> ;
-                   foaf:schoolHomepage <http://www.univ-larochelle.fr/> .
-    `, store, base);
-
-    // Obtenez les informations de l'utilisateur à partir du graphe RDF
-    const user = store.any($rdf.sym(base), $rdf.sym('http://xmlns.com/foaf/0.1/firstName'));
-    const lastName = store.any($rdf.sym(base), $rdf.sym('http://xmlns.com/foaf/0.1/lastName'));
-    const homepage = store.any($rdf.sym(base), $rdf.sym('http://xmlns.com/foaf/0.1/homepage'));
-
-    // Mettez à jour les éléments HTML avec les informations récupérées
-    document.querySelector('span[property="foaf:firstName"]').textContent = user.value;
-    document.querySelector('span[property="foaf:lastName"]').textContent = lastName.value;
-    document.querySelector('a[property="foaf:homepage"]').href = homepage.value;
-</script>
-</body>
+<html xmlns:foaf="http://xmlns.com/foaf/0.1/"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <head>
+      <meta charset="UTF-8"/>
+      <title>Abdessamia OMRACHI</title>
+   </head>
+   <body>
+      <h2>HomePage</h2>
+      <div typeof="foaf:Person"
+           about="https://abdessamiaomrachi.github.io/TP-FOAF/abdessamia.omrachi.rdf"/>
+      <h1>Abdessamia OMRACHI</h1>
+      <p>Prénom: <span property="foaf:firstName"/>
+      </p>
+      <p>Nom: <span property="foaf:lastName"/>
+      </p>
+      <p>Page personnelle: <a property="foaf:homepage" href="http://abdessamia.omrachi.com"/>
+      </p>
+      <p>Page de l'école: <a property="foaf:schoolHomepage" href="http://www.univ-larochelle.fr/"/>
+      </p>
+   </body>
 </html>
